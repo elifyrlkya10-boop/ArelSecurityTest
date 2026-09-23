@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arel OBS - Şifre Değiştirme Simülasyonu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <div class="obs-header">
+        <div class="logo-container-header">
+            <img src="logo.png" alt="Arel Logo" class="arel-logo">
+            <div class="logo-area">
+                <span class="arel-text">İSTANBUL AREL ÜNİVERSİTESİ</span>
+                <span class="obs-text">Öğrenci Bilgi Sistemi (OBS)</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="login-container">
+        <div class="card-header">
+            <h3>Şifre Yenileme Paneli</h3>
+            <p>Güvenliğiniz için lütfen yeni şifre kriterlerine uyunuz.</p>
+        </div>
+
+        <div class="input-group">
+            <label for="studentId">Öğrenci Numarası / T.C. Kimlik No</label>
+            <input type="text" id="studentId" placeholder="Örn: 240103000" autocomplete="off">
+        </div>
+
+        <div class="input-group">
+            <label for="passwordInput">Yeni Şifre</label>
+            <input type="password" id="passwordInput" placeholder="••••••••" disabled>
+            <small id="inputHint" class="hint-text">Şifre yazmak için önce öğrenci numarasını giriniz.</small>
+        </div>
+
+        <div class="meter-container">
+            <div id="strengthBar" class="bar"></div>
+        </div>
+        <div id="feedbackText" class="feedback">Şifre Durumu: Bekleniyor</div>
+
+        <ul class="criteria-list">
+            <li id="ruleLength" class="invalid">En az 8 karakter</li>
+            <li id="ruleUpper" class="invalid">En az 1 büyük harf (A-Z)</li>
+            <li id="ruleLower" class="invalid">En az 1 küçük harf (a-z)</li>
+            <li id="ruleNumber" class="invalid">En az 1 sayı (0-9)</li>
+            <li id="ruleSymbol" class="invalid">En az 1 özel sembol (#, -, _, ?, *)</li>
+        </ul>
+
+        <button id="submitBtn" disabled>Şifreyi Güncelle</button>
+    </div>
+
+    <div id="successModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="check-icon">✓</div>
+            </div>
+            <div class="modal-body">
+                <h3>İşlem Başarılı</h3>
+                <p>Arel OBS şifreniz başarıyla güncellenmiştir.</p>
+                <p class="sub-text">Sisteme yeni şifrenizle giriş yapabilirsiniz.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="modalCloseBtn" class="primary-modal-btn">Tamam (Ana Sayfaya Dön)</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
